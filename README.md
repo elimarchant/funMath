@@ -2,6 +2,14 @@
 
 A collection of fun, kid-friendly maths games that run right in the browser. No install, no build step, no dependencies.
 
+## ▶️ Play now
+
+**https://elimarchant.github.io/funMath/**
+
+Straight to the 24 game: https://elimarchant.github.io/funMath/games/24/
+
+Source code: https://github.com/elimarchant/funMath
+
 Right now there is one game, with room to add more.
 
 ## 🎯 The 24 Game
@@ -39,7 +47,7 @@ npx serve .
 python -m http.server 8000
 ```
 
-It also works on GitHub Pages: enable Pages for the `main` branch and the site is live.
+The live site is hosted on GitHub Pages, served from the `main` branch.
 
 ## Project layout
 
