@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FunMath</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+  <style>
+    .hero { text-align: center; padding: 40px 16px 10px; }
+    .hero h1 { font-size: clamp(2.4rem, 9vw, 4rem); margin: 0; }
+    .hero h1 span { color: var(--brand); }
+    .hero p { color: var(--muted); font-size: 1.1rem; }
+    .games {
+      max-width: 760px; margin: 20px auto 60px; padding: 0 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px;
+    }
+    .game-card {
+      display: block; text-decoration: none; color: var(--ink); background: var(--card);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; text-align: center;
+      transition: transform .12s;
+    }
+    .game-card:hover { transform: translateY(-4px) rotate(-1deg); }
+    .game-card .emoji { font-size: 3.5rem; display: block; }
+    .game-card h2 { margin: 8px 0 4px; }
+    .game-card p { margin: 0; color: var(--muted); }
+    .soon { opacity: .55; border: 3px dashed #b9c2de; box-shadow: none; background: transparent; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Fun<span>Math</span> 🎲</h1>
+    <p>Pick a game and play with numbers!</p>
+  </header>
+  <main class="games">
+    <a class="game-card" href="games/24/index.html">
+      <span class="emoji">🎯</span>
+      <h2>The 24 Game</h2>
+      <p>Use four numbers and + − × ÷ to hit the target.</p>
+    </a>
+    <div class="game-card soon">
+      <span class="emoji">🚧</span>
+      <h2>More coming soon</h2>
+      <p>New games will appear here.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+:root {
+  --bg1: #fff7e6;
+  --bg2: #e9f3ff;
+  --ink: #26324a;
+  --muted: #6b7794;
+  --card: #ffffff;
+  --brand: #6c5ce7;
+  --brand-dark: #5646d6;
+  --good: #20bf6b;
+  --bad: #eb3b5a;
+  --warn: #f7b731;
+  --blue: #3498fe;
+  --shadow: 0 6px 0 rgba(38, 50, 74, 0.12), 0 12px 30px rgba(38, 50, 74, 0.12);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(160deg, var(--bg1), var(--bg2));
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a { color: var(--brand); }
+
+.btn {
+  font: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--brand);
+  box-shadow: 0 4px 0 var(--brand-dark);
+  transition: transform .08s, box-shadow .08s, filter .15s;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--brand-dark); }
+.btn:focus-visible, .chip:focus-visible, input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
