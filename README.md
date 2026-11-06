@@ -12,7 +12,7 @@ Source code: https://github.com/elimarchant/funMath
 
 Right now there is one game, with room to add more.
 
-## 🎯 The 24 Game
+## 🎯 24
 
 Pick a target number (24 by default). The game deals you four numbers. Drag them into the empty boxes, drag `+ − × ÷` between them, and press **Check**.
 
@@ -20,18 +20,18 @@ Pick a target number (24 by default). The game deals you four numbers. Drag them
 
 ### Features
 
-- **Choose your target** – 24 is the classic, but type in any whole number from 0 to 500.
-- **Drag and drop** numbers and signs into the boxes. It also works by tapping, so it's fine on phones and tablets.
+- **Choose your target** – 24 is the classic, but type in any whole number from 0 to 50. Press Enter or click away and a new puzzle starts straight away.
+- **Drag and drop** numbers, signs and brackets into place. It also works by tapping, so it's fine on phones and tablets.
 - **Check** – right answer: confetti, a cheer ("yay!") and a new puzzle with the same target. Wrong answer: a red ✖, a shake, a sad "ohhh" and you stay on the same puzzle. It tells you what your equation actually equals.
-- **Help** – each click places one correct number or sign in the next wrong or empty box, marked with a green outline.
-- **New question** and **Change target** buttons.
+- **Help** – each click gives one hint at random: it puts a correct number, sign or bracket in a spot that isn't right yet (replacing a wrong guess there) and marks it with a green outline. It never touches a piece that is already correct.
+- **New question** button.
 - **Difficulty**
-  - *Easy*: numbers 1–13, never any fractions.
-  - *Hard*: numbers 0–13, and the answer needs fractions along the way (e.g. `12 ÷ 9 × 9 + 12`).
+  - *Easy*: numbers 1–13, never any fractions, no brackets.
+  - *Hard*: numbers 0–13, and the answer needs fractions along the way, so you get **brackets** too, e.g. `8 ÷ (3 − 8 ÷ 3) = 24`. Drag `(` and `)` into the thin gaps before and after the number boxes. They are always on offer, like the signs, even when a puzzle doesn't need them.
 - Streak and solved counters, and a mute button for the sounds.
 - Every puzzle is guaranteed solvable.
 
-Maths follows normal school rules: `×` and `÷` happen before `+` and `−`. Fractions are computed exactly, so there are no rounding errors.
+Maths follows normal school rules: brackets first, then `×` and `÷`, then `+` and `−`. Fractions are computed exactly, so there are no rounding errors.
 
 ### Sounds
 
@@ -75,5 +75,5 @@ games/
 The puzzle logic in `games/24/solver.js` also runs in Node:
 
 ```sh
-node -e "const S=require('./games/24/solver.js'); console.log(S.solve([5,5,5,2],20))"
+node -e "const S=require('./games/24/solver.js'); console.log(S.solveBrackets([3,3,8,8],24))"
 ```

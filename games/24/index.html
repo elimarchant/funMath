@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FunMath – The 24 Game</title>
+  <title>24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/common.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +15,7 @@
 
   <header class="top">
     <a class="home" href="../../index.html" title="Back to all games">← FunMath</a>
-    <h1>The <span class="pop">24</span> Game</h1>
+    <h1>24</h1>
     <button id="mute" class="icon-btn" aria-label="Toggle sound" title="Sound on/off">🔊</button>
   </header>
 
@@ -20,9 +23,9 @@
     <section class="controls card">
       <label class="target-box">
         <span>Target</span>
-        <input id="targetInput" type="number" inputmode="numeric" min="0" max="500" value="24" aria-label="Target number">
+        <input id="targetInput" type="number" inputmode="numeric" min="0" max="50" value="24"
+               aria-label="Target number (0 to 50). Press Enter or click away to start a new puzzle.">
       </label>
-      <button id="setTarget" class="btn small">Change target</button>
 
       <div class="levels" role="group" aria-label="Difficulty">
         <button class="chip active" data-level="easy" aria-pressed="true">😀 Easy</button>
@@ -42,18 +45,34 @@
       <div id="tray" class="tray" aria-label="Number tiles"></div>
 
       <div class="board" id="board" aria-label="Equation board">
-        <div class="slot num" data-kind="num" data-i="0"></div>
-        <div class="slot op"  data-kind="op"  data-i="0"></div>
-        <div class="slot num" data-kind="num" data-i="1"></div>
-        <div class="slot op"  data-kind="op"  data-i="1"></div>
-        <div class="slot num" data-kind="num" data-i="2"></div>
-        <div class="slot op"  data-kind="op"  data-i="2"></div>
-        <div class="slot num" data-kind="num" data-i="3"></div>
+        <div class="numcell">
+          <div class="bz open" data-kind="open" data-i="0"></div>
+          <div class="slot num" data-kind="num" data-i="0"></div>
+          <div class="bz close" data-kind="close" data-i="0"></div>
+        </div>
+        <div class="slot op" data-kind="op" data-i="0"></div>
+        <div class="numcell">
+          <div class="bz open" data-kind="open" data-i="1"></div>
+          <div class="slot num" data-kind="num" data-i="1"></div>
+          <div class="bz close" data-kind="close" data-i="1"></div>
+        </div>
+        <div class="slot op" data-kind="op" data-i="1"></div>
+        <div class="numcell">
+          <div class="bz open" data-kind="open" data-i="2"></div>
+          <div class="slot num" data-kind="num" data-i="2"></div>
+          <div class="bz close" data-kind="close" data-i="2"></div>
+        </div>
+        <div class="slot op" data-kind="op" data-i="2"></div>
+        <div class="numcell">
+          <div class="bz open" data-kind="open" data-i="3"></div>
+          <div class="slot num" data-kind="num" data-i="3"></div>
+          <div class="bz close" data-kind="close" data-i="3"></div>
+        </div>
         <div class="equals">=</div>
         <div class="goal" id="goal">24</div>
       </div>
 
-      <div class="tray-label">Signs <small>(you can use each as many times as you like)</small></div>
+      <div class="tray-label">Signs <small>(use each as many times as you like)</small></div>
       <div class="palette" id="palette">
         <div class="tile opt" data-op="+">+</div>
         <div class="tile opt" data-op="-">−</div>
@@ -61,7 +80,15 @@
         <div class="tile opt" data-op="/">÷</div>
       </div>
 
-      <p class="rule">× and ÷ are done before + and −, just like in school. 5×2+5+5 = 20.</p>
+      <div class="brackets-only">
+        <div class="tray-label">Brackets <small>(drag one into the gap before or after a number)</small></div>
+        <div class="palette" id="bpalette">
+          <div class="tile br" data-br="(">(</div>
+          <div class="tile br" data-br=")">)</div>
+        </div>
+      </div>
+
+      <p class="rule" id="rule"></p>
 
       <div id="message" class="message" role="status" aria-live="polite"></div>
 
